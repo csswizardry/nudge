@@ -3,7 +3,7 @@
 **Give developers a gentle push in the right direction.**
 
 Nudge is an ITCSS-compatible library that detects misuse of certain CSS
-selectors, and gives developers a subtle Nudge to fix them. Mistakes and
+selectors, and gives developers a subtle nudge to fix them. Mistakes and
 incorrect usage gets highlighted in the UI.
 
 ![Screenshot showing a simple example of Nudge at work](./screenshot-001.png)
