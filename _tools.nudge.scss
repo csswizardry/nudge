@@ -34,6 +34,7 @@ $nudge-enabled: true !default;
 
 }
 
+// If a selector passes the test, take its error back off.
 @mixin _nudge-pass() {
   outline: none;
 
@@ -47,6 +48,8 @@ $nudge-enabled: true !default;
 
 
 
+// Incorrect Nesting
+//
 // Nudge mixin to check the validity of the nesting of elements in the DOM.
 // E.g.: `.foo__bar` must always exist somewhere inside of `.foo`; we can ensure
 // that developers are not using `.foo__bar` out of context by asking Nudge to

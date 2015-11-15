@@ -28,7 +28,7 @@
 @if ($nudge-enabled == true) {
 
 /**
- * Single-space delimited class attributes
+ * Single-Space Delimited Class Attributes
  */
 [class*=" "] {
   @include _nudge-message('warn');
@@ -52,7 +52,7 @@
 @if ($nudge-enabled == true) {
 
 /**
- * Improper use of BEM Modifiers.
+ * Improper Use of BEM Modifiers.
  *
  * By checking whether a class attribute contains two hyphens but no  space
  * (i.e. there’s only one class and it’s a Modifier), tell the developer that
@@ -80,7 +80,7 @@
 @if ($nudge-enabled == true) {
 
 /**
- * Underscores as delimiters
+ * Underscores as Delimiters
  *
  * We should not be using single underscores in our classes. Mark as a warn and
  * not an error because we could be dealing with third party code that we have
@@ -108,7 +108,7 @@
 @if ($nudge-enabled == true) {
 
 /**
- * Camel Case
+ * Use of Camel Case
  *
  * We don’t want developers using camel case classes. Detect if the class
  * contains a capital letter and show a warning. Mark as a warn and not an error
