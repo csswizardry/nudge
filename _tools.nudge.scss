@@ -8,9 +8,8 @@ $nudge-enabled: true !default;
   @warn "Nudge included but not enabled: UI errors no longer being reported."
 }
 
-// This is a private mixin for use only by the Nudge library.
-// It simply spits out the styles for the message that gets
-// displayed in the UI.
+// This is a private mixin for use only by the Nudge library. It simply spits
+// out the styles for the message that gets displayed in the UI.
 @mixin _nudge-message($level: 'error') {
 
   $color: orange;
@@ -34,10 +33,10 @@ $nudge-enabled: true !default;
   }
 }
 
-// Nudge mixin to check the validity of the nesting of elements in
-// the DOM. E.g.: `.foo__bar` must always exist somewhere inside of
-// `.foo`; we can ensure that developers are not using `.foo__bar`
-// out of context by asking Nudge to check it.
+// Nudge mixin to check the validity of the nesting of elements in the DOM.
+// E.g.: `.foo__bar` must always exist somewhere inside of `.foo`; we can ensure
+// that developers are not using `.foo__bar` out of context by asking Nudge to
+// check it.
 //
 // .example {
 //   display: block;
