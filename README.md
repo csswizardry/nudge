@@ -10,9 +10,7 @@ incorrect usage get highlighted in the UI.
 
 ## Installation
 
-    $ [NPM]
-
-    $ [BOWER]
+    $ bower install --save nudgecss
 
 ## Disclaimers
 
