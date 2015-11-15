@@ -20,7 +20,7 @@ incorrect usage get highlighted in the UI.
    projects, but be aware that this repository exists mainly for me and my
    clients to use in our work. It’s opinionated, has limited scope, and is not
    actively seeking contributions. If do have something you feel is a worthy
-   addition with its scope, open an issue.
+   addition within this scope, open an issue.
 2. **This is crude. Very crude.** The CSS in Nudge is actively bad. It’s
    circumstantial at best. Nudge is intended to be a very loose, high-level
    linter, and probably will miss things or give false positives. I’m okay with
