@@ -1,0 +1,17 @@
+{
+  "name": "nudgecss",
+  "version": "0.1.2",
+  "homepage": "https://github.com/csswizardry/nudge",
+  "authors": [
+    "Harry Roberts <csswizardry@gmail.com>"
+  ],
+  "description": "",
+  "main": "_tools.nudge.scss",
+  "moduleType": [],
+  "keywords": [
+    "css",
+    "scss",
+    "bem"
+  ],
+  "license": "Apache-2.0"
+}
