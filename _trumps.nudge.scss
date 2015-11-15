@@ -28,6 +28,35 @@
 @if ($nudge-enabled == true) {
 
 /**
+ * Single-space delimited class attributes
+ */
+[class*=" "] {
+  @include _nudge-message('warn');
+
+  &:after {
+    content: "WARN: Prefer double spaces between class names.";
+  }
+
+}
+
+[class*="  "] {
+  outline: none;
+
+  &:after {
+    content: normal;
+  }
+
+}
+
+} //endif
+
+
+
+
+
+@if ($nudge-enabled == true) {
+
+/**
  * Improper use of BEM Modifiers.
  *
  * By checking whether a class attribute contains two hyphens but no  space
