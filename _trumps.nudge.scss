@@ -7,8 +7,8 @@
 /**
  * Use of IDs.
  *
- * IDs in CSS are a BadIdea™, so display a warning if one is detected. We only
- * throw a warn and not an error because IDs are still allowed in HTML and JS.
+ * IDs in CSS are a BadIdea™, so display a warning if one is detected. Mark as a
+ * warn and not an error because IDs are still allowed in HTML and JS.
  */
 [id] {
   @include _nudge-message('warn');
@@ -57,6 +57,10 @@
 
 /**
  * Underscores as delimiters
+ *
+ * We should not be using single underscores in our classes. Mark as a warn and
+ * not an error because we could be dealing with third party code that we have
+ * no control over.
  */
 [class*="_"] {
   @include _nudge-message('warn');
@@ -88,7 +92,9 @@
  * Camel Case
  *
  * We don’t want developers using camel case classes. Detect if the class
- * contains a capital letter and show a warning.
+ * contains a capital letter and show a warning. Mark as a warn and not an error
+ * because we could be dealing with third party code that we have no control
+ * over.
  */
 
 $_nudge-alphabet: ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
