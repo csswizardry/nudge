@@ -4,7 +4,7 @@
 
 Nudge is an opinionated, ITCSS-compatible library that detects misuse of certain
 CSS selectors, and gives developers a subtle nudge to fix them. Mistakes and
-incorrect usage gets highlighted in the UI.
+incorrect usage get highlighted in the UI.
 
 ![Screenshot showing a simple example of Nudge at work](./screenshot-001.png)
 
@@ -39,8 +39,8 @@ people turning Nudge off if we’ve purposely included it in a project.
 
 #### Incorrect Nesting
 
-To check for incorrect nesting of a class, call the `nudge-nest()` within it,
-passing in the expected ancestor. For example, in our HTML, `.widget__title`
+To check for incorrect nesting of a class, call the `nudge-nest()` mixin within
+it, passing in the expected ancestor. For example, in our HTML, `.widget__title`
 must always live inside of `.widget`, so in our Sass we would write:
 
     .widget {
