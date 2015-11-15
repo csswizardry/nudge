@@ -31,8 +31,10 @@ documentation, please see the comments in the relevant files.
 You can disable Nudge by setting `$nudge-enabled` to `false` just before you
 `@import` `_tools.nudge.scss`, i.e.:
 
-    $nudge-enabled: false;
-    @import "tools.nudge";
+```scss
+$nudge-enabled: false;
+@import "tools.nudge";
+```
 
 Disabling Nudge will give warnings in your output stream: we don’t really want
 people turning Nudge off if we’ve purposely included it in a project.
@@ -43,14 +45,16 @@ To check for incorrect nesting of a class, call the `nudge-nest()` mixin within
 it, passing in the expected ancestor. For example, in our HTML, `.widget__title`
 must always live inside of `.widget`, so in our Sass we would write:
 
-    .widget {
-      [styles]
-    }
+```scss
+.widget {
+  [styles]
+}
 
-      .widget__title {
-        @include nudge-nest('.widget');
-        [styles]
-      }
+  .widget__title {
+    @include nudge-nest('.widget');
+    [styles]
+  }
+```
 
 Now we will see an error in our UI if `.widget__title` is used outside of the
 context of `.widget`.
@@ -60,13 +64,15 @@ context of `.widget`.
 To configure our deprecated selectors, simply copy/paste the
 `$nudge-deprecated-selectors` map out of `_trumps.nudge.scss` and into your
 manifest file (e.g. `main.scss`). Place it just before your `@import` for the
-`_trumps.nudge.scss` file, then elete the `!default` flag and replace the
+`_trumps.nudge.scss` file, then delete the `!default` flag and replace the
 example selectors with your own, e.g.:
 
-    $nudge-deprecated-selectors: (
-      '.btn': '.c-btn',
-    );
-    @import "trumps.nudge";
+```scss
+$nudge-deprecated-selectors: (
+  '.btn': '.c-btn',
+);
+@import "trumps.nudge";
+```
 
 ## The Rules
 
