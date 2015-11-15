@@ -5,7 +5,7 @@
 $nudge-enabled: true !default;
 
 @if ($nudge-enabled == false) {
-  @warn "You have included Nudge in your project but have turned it off. Are you sure this is correct?"
+  @warn "Nudge included but not enabled: UI errors no longer being reported."
 }
 
 // This is a private mixin for use only by the Nudge library.
