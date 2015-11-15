@@ -31,6 +31,16 @@ $nudge-enabled: true !default;
     background-color: white;
     color: $color;
   }
+
+}
+
+@mixin _nudge-pass() {
+  outline: none;
+
+  &:after {
+    content: normal;
+  }
+
 }
 
 
@@ -75,10 +85,7 @@ $nudge-enabled: true !default;
      * …but remove the errors if things are nested correctly.
      */
     #{$element} & {
-      outline: none;
-      &:after {
-        content: normal;
-      }
+      @include _nudge-pass();
     }
 
   } //endif

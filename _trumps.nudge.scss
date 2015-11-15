@@ -40,12 +40,7 @@
 }
 
 [class*="  "] {
-  outline: none;
-
-  &:after {
-    content: normal;
-  }
-
+  @include _nudge-pass();
 }
 
 } //endif
@@ -101,12 +96,7 @@
 }
 
 [class*="__"] {
-  outline: none;
-
-  &:after {
-    content: normal;
-  }
-
+  @include _nudge-pass();
 }
 
 } //endif
