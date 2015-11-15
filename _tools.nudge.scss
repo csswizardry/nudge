@@ -20,7 +20,7 @@ $nudge-enabled: true !default;
 
   position: relative;
   outline: 1px solid $color;
-  
+
   &:after {
     position: absolute;
     bottom: 100%;
@@ -32,6 +32,10 @@ $nudge-enabled: true !default;
     color: $color;
   }
 }
+
+
+
+
 
 // Nudge mixin to check the validity of the nesting of elements in the DOM.
 // E.g.: `.foo__bar` must always exist somewhere inside of `.foo`; we can ensure
@@ -54,11 +58,17 @@ $nudge-enabled: true !default;
 
     /**
      * Immediately apply error states to all instances of the element…
+     *
+     * // 1. Double up the selector’s specificity so that nothing in the Trumps
+     * //    layer accidentally overrides it (namely our check for single
+     * //    underscores).
      */
-    @include _nudge-message();
-    
-    &:after {
-      content: "ERROR: Element `." attr(class) "` should only appear within `#{$element}`.";
+    &#{&} { // [1]
+      @include _nudge-message();
+
+      &:after {
+        content: "ERROR: Element `." attr(class) "` should only appear within `#{$element}`.";
+      }
     }
 
     /**
