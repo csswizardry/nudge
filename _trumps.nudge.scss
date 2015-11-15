@@ -3,6 +3,30 @@
 \*------------------------------------*/
 
 @if ($nudge-enabled == true) {
+
+/**
+ * Use of IDs.
+ *
+ * IDs in CSS are a BadIdea™, so display a warning if one is detected. We only
+ * throw a warn and not an error because IDs are still allowed in HTML and JS.
+ */
+[id] {
+  @include _nudge-message('warn');
+
+  &:after {
+    content: "WARN: Do not use IDs in CSS.";
+  }
+
+}
+
+} //endif
+
+
+
+
+
+@if ($nudge-enabled == true) {
+
 /**
  * Improper use of BEM Modifiers.
  *
@@ -21,6 +45,7 @@
   }
 
 }
+
 } //endif
 
 
@@ -29,6 +54,66 @@
 
 
 @if ($nudge-enabled == true) {
+
+/**
+ * Underscores as delimiters
+ */
+[class*="_"] {
+  @include _nudge-message('warn');
+
+  &:after {
+    content: "WARN: Do not use underscores to delimit strings";
+  }
+
+}
+
+[class*="__"] {
+  outline: none;
+
+  &:after {
+    content: normal;
+  }
+
+}
+
+} //endif
+
+
+
+
+
+@if ($nudge-enabled == true) {
+
+/**
+ * Camel Case
+ *
+ * We don’t want developers using camel case classes. Detect if the class
+ * contains a capital letter and show a warning.
+ */
+
+$_nudge-alphabet: ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
+
+@each $letter in $_nudge-alphabet {
+  [class*="#{$letter}"] {
+    @include _nudge-message('warn');
+
+    &:after {
+      content: "WARN: Do not use camelCase in class names.";
+    }
+
+  }
+
+}
+
+} //endif
+
+
+
+
+
+
+@if ($nudge-enabled == true) {
+
 /**
  * Deprecated Selectors
  *
@@ -66,4 +151,5 @@ $nudge-deprecated-selectors: (
 
   }
 }
+
 } //endif
