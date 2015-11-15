@@ -1,6 +1,6 @@
 {
   "name": "nudgecss",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Warn developers about improper selector usage",
   "main": "_tools.nudge.scss",
   "scripts": {

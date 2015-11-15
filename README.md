@@ -14,6 +14,20 @@ incorrect usage get highlighted in the UI.
 
     $ [BOWER]
 
+## Disclaimers
+
+1. **This is not an active OSS project.** Please feel free to use Nudge in your
+   projects, but be aware that this repository exists mainly for me and my
+   clients to use in our work. It’s opinionated, has limited scope, and is not
+   actively seeking contributions. If do have something you feel is a worthy
+   addition with its scope, open an issue.
+2. **This is crude. Very crude.** The CSS in Nudge is actively bad. It’s
+   circumstantial at best. Nudge is intended to be a very loose, high-level
+   linter, and probably will miss things or give false positives. I’m okay with
+   that—I just want Nudge to be a quick ’n’ dirty, cheap ’n’ cheerful first pass
+   over the UI. For what it needs to do, Nudge is GoodEnough™ for now. More
+   strict and stringent tools should be used if that’s what you require.
+
 ## Usage
 
 Using Nudge is relatively simple. For more in-depth information and
