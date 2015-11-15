@@ -1,0 +1,10 @@
+@import "../tools.nudge";
+
+.foo__bar {
+  @include nudge-nest('.foo');
+}
+
+$nudge-deprecated-selectors: (
+  '.foo': null,
+);
+@import "../trumps.nudge";

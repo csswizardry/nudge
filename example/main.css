@@ -1,0 +1,552 @@
+@charset "UTF-8";
+.foo__bar {
+  /**
+   * Immediately apply error states to all instances of the element…
+   *
+   * // 1. Double up the selector’s specificity so that nothing in the Trumps
+   * //    layer accidentally overrides it (namely our check for single
+   * //    underscores).
+   */
+  /**
+   * …but remove the errors if things are nested correctly.
+   */ }
+  .foo__bar.foo__bar {
+    position: relative;
+    outline: 1px solid red; }
+    .foo__bar.foo__bar:after {
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      font: normal 12px/1 monospace;
+      white-space: nowrap;
+      padding: 2px;
+      background-color: white;
+      color: red; }
+    .foo__bar.foo__bar:after {
+      content: "ERROR: Element `." attr(class) "` should only appear within `.foo`."; }
+  .foo .foo__bar {
+    outline: none; }
+    .foo .foo__bar:after {
+      content: normal; }
+
+/*------------------------------------*\
+  #NUDGE
+\*------------------------------------*/
+/**
+ * Use of IDs.
+ *
+ * IDs in CSS are a BadIdea™, so display a warning if one is detected. Mark as a
+ * warn and not an error because IDs are still allowed in HTML and JS.
+ */
+[id] {
+  position: relative;
+  outline: 1px solid orange; }
+  [id]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [id]:after {
+    content: "WARN: Do not use IDs in CSS."; }
+
+/**
+ * Single-space delimited class attributes
+ */
+[class*=" "] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*=" "]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*=" "]:after {
+    content: "WARN: Prefer double spaces between class names."; }
+
+[class*="  "] {
+  outline: none; }
+  [class*="  "]:after {
+    content: normal; }
+
+/**
+ * Improper use of BEM Modifiers.
+ *
+ * By checking whether a class attribute contains two hyphens but no  space
+ * (i.e. there’s only one class and it’s a Modifier), tell the developer that
+ * they can’t use a Modifier without a corresponding Block.
+ *
+ * N.B. This isn’t bulletproof: `class="foo--bar baz"` would pass, as would
+ *      `class=" foo--bar"`. Use with a pinch of salt.
+ */
+[class*="--"]:not([class*=" "]) {
+  position: relative;
+  outline: 1px solid red; }
+  [class*="--"]:not([class*=" "]):after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: red; }
+  [class*="--"]:not([class*=" "]):after {
+    content: "ERROR: Cannot have a Modifier (i.e. `." attr(class) "`) without a Block."; }
+
+/**
+ * Underscores as delimiters
+ *
+ * We should not be using single underscores in our classes. Mark as a warn and
+ * not an error because we could be dealing with third party code that we have
+ * no control over.
+ */
+[class*="_"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="_"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="_"]:after {
+    content: "WARN: Do not use underscores to delimit strings"; }
+
+[class*="__"] {
+  outline: none; }
+  [class*="__"]:after {
+    content: normal; }
+
+/**
+ * Camel Case
+ *
+ * We don’t want developers using camel case classes. Detect if the class
+ * contains a capital letter and show a warning. Mark as a warn and not an error
+ * because we could be dealing with third party code that we have no control
+ * over.
+ */
+[class*="A"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="A"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="A"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="B"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="B"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="B"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="C"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="C"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="C"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="D"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="D"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="D"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="E"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="E"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="E"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="F"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="F"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="F"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="G"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="G"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="G"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="H"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="H"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="H"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="I"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="I"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="I"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="J"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="J"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="J"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="K"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="K"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="K"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="L"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="L"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="L"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="M"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="M"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="M"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="N"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="N"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="N"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="O"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="O"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="O"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="P"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="P"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="P"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="Q"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="Q"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="Q"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="R"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="R"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="R"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="S"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="S"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="S"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="T"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="T"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="T"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="U"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="U"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="U"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="V"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="V"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="V"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="W"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="W"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="W"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="X"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="X"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="X"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="Y"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="Y"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="Y"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+[class*="Z"] {
+  position: relative;
+  outline: 1px solid orange; }
+  [class*="Z"]:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+  [class*="Z"]:after {
+    content: "WARN: Do not use camelCase in class names."; }
+
+/**
+ * Deprecated Selectors
+ *
+ * Sometimes we will want to deprecate and/or phase out certain selectors.
+ * We can define a list of these selectors (with optional replacements)
+ * that will display a warning in the UI when used.
+ */
+.foo {
+  position: relative;
+  outline: 1px solid orange; }
+  .foo:after {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font: normal 12px/1 monospace;
+    white-space: nowrap;
+    padding: 2px;
+    background-color: white;
+    color: orange; }
+
+.foo:after {
+  content: "WARN: Selector `.foo` is deprecated."; }
+
+/*# sourceMappingURL=main.css.map */
