@@ -1,0 +1,69 @@
+/*------------------------------------*\
+  #NUDGE
+\*------------------------------------*/
+
+@if ($nudge-enabled == true) {
+/**
+ * Improper use of BEM Modifiers.
+ *
+ * By checking whether a class attribute contains two hyphens but no  space
+ * (i.e. there’s only one class and it’s a Modifier), tell the developer that
+ * they can’t use a Modifier without a corresponding Block.
+ *
+ * N.B. This isn’t bulletproof: `class="foo--bar baz"` would pass, as would
+ *      `class=" foo--bar"`. Use with a pinch of salt.
+ */
+[class*="--"]:not([class*=" "]) {
+  @include _nudge-message();
+    
+  &:after {
+    content: "ERROR: Cannot have a Modifier (i.e. `." attr(class) "`) without a Block.";
+  }
+
+}
+} //endif
+
+
+
+
+
+
+@if ($nudge-enabled == true) {
+/**
+ * Deprecated Selectors
+ *
+ * Sometimes we will want to deprecate and/or phase out certain selectors.
+ * We can define a list of these selectors (with optional replacements)
+ * that will display a warning in the UI when used.
+ */
+// Array of our selectors and their replacements. If there is no replacement,
+// use `null`.
+//
+// The array below is an example: do not modify it directly. Instead, replicate
+// it elsewhere earlier in the project (e.g. in a `_settings.deprecations.scss`
+// file).
+
+$nudge-deprecated-selectors: (
+  '.deprecated-class': '.replacement-class',
+  '.deprecated-class-with-no-replaement': null,
+) !default;
+
+%_nudge-deprecated-selectors-shared-styles {
+  @include _nudge-message('warn');
+}
+
+@each $selector, $replacement in $nudge-deprecated-selectors {
+  #{$selector} {
+    @extend %_nudge-deprecated-selectors-shared-styles;
+
+  &:after {
+    @if ($replacement != null) {
+      content: "WARN: Selector `#{$selector}` is deprecated, use `#{$replacement}` instead.";
+    } @else {
+      content: "WARN: Selector `#{$selector}` is deprecated.";
+    }
+  }
+
+  }
+}
+} //endif
