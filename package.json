@@ -1,0 +1,28 @@
+{
+  "name": "nudgecss",
+  "version": "0.0.1",
+  "description": "Warn developers about improper selector usage",
+  "main": "_tools.nudge.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csswizardry/nudge.git"
+  },
+  "keywords": [
+    "css",
+    "scss",
+    "bem"
+  ],
+  "author": {
+    "name": "Harry Roberts",
+    "email": "csswizardry@gmail.com"
+    "url": "http://csswizardry.com"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/csswizardry/nudge/issues"
+  },
+  "homepage": "https://github.com/csswizardry/nudge#readme"
+}
