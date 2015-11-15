@@ -10,6 +10,10 @@ incorrect usage gets highlighted in the UI.
 
 ## Installation
 
+    $ [NPM]
+
+    $ [BOWER]
+
 ## Usage
 
 Using Nudge is relatively simple. For more in-depth information and
