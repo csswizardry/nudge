@@ -72,11 +72,11 @@ $nudge-enabled: true !default;
     /**
      * Immediately apply error states to all instances of the element…
      *
-     * // 1. Double up the selector’s specificity so that nothing in the Trumps
-     * //    layer accidentally overrides it (namely our check for single
-     * //    underscores).
+     * 1. Double up the selector’s specificity so that nothing in the Trumps
+     *    layer accidentally overrides it (namely our check for single
+     *    underscores).
      */
-    &#{&} { // [1]
+    &#{&} { /* [1] */
       @include _nudge-message();
 
       &:after {

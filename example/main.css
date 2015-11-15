@@ -3,14 +3,15 @@
   /**
    * Immediately apply error states to all instances of the element…
    *
-   * // 1. Double up the selector’s specificity so that nothing in the Trumps
-   * //    layer accidentally overrides it (namely our check for single
-   * //    underscores).
+   * 1. Double up the selector’s specificity so that nothing in the Trumps
+   *    layer accidentally overrides it (namely our check for single
+   *    underscores).
    */
   /**
    * …but remove the errors if things are nested correctly.
    */ }
   .foo__bar.foo__bar {
+    /* [1] */
     position: relative;
     outline: 1px solid red; }
     .foo__bar.foo__bar:after {
@@ -54,7 +55,7 @@
     content: "WARN: Do not use IDs in CSS."; }
 
 /**
- * Single-space delimited class attributes
+ * Single-Space Delimited Class Attributes
  */
 [class*=" "] {
   position: relative;
@@ -77,7 +78,7 @@
     content: normal; }
 
 /**
- * Improper use of BEM Modifiers.
+ * Improper Use of BEM Modifiers.
  *
  * By checking whether a class attribute contains two hyphens but no  space
  * (i.e. there’s only one class and it’s a Modifier), tell the developer that
@@ -102,7 +103,7 @@
     content: "ERROR: Cannot have a Modifier (i.e. `." attr(class) "`) without a Block."; }
 
 /**
- * Underscores as delimiters
+ * Underscores as Delimiters
  *
  * We should not be using single underscores in our classes. Mark as a warn and
  * not an error because we could be dealing with third party code that we have
@@ -129,7 +130,7 @@
     content: normal; }
 
 /**
- * Camel Case
+ * Use of Camel Case
  *
  * We don’t want developers using camel case classes. Detect if the class
  * contains a capital letter and show a warning. Mark as a warn and not an error
