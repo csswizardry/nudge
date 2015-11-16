@@ -12,6 +12,10 @@ incorrect usage get highlighted in the UI.
 
     $ bower install --save nudgecss
 
+Or:
+
+    $ npm install --save nudgecss
+
 ## Disclaimers
 
 1. **This is not an active OSS project.** Please feel free to use Nudge in your
