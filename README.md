@@ -16,7 +16,7 @@ Or:
 
     $ npm install --save nudgecss
 
-## Disclaimers
+## Disclaimers and Notices
 
 1. **This is not an active OSS project.** Please feel free to use Nudge in your
    projects, but be aware that this repository exists mainly for me and my
@@ -29,6 +29,10 @@ Or:
    that—I just want Nudge to be a quick ’n’ dirty, cheap ’n’ cheerful first pass
    over the UI. For what it needs to do, Nudge is GoodEnough™ for now. More
    strict and stringent tools should be used if that’s what you require.
+3. **Remove Nudge from production.** Nudge will fill your stylesheet full of
+   crap: please make sure you remove Nudge before putting any CSS live. This
+   will help performance, but will also ensure that your users never see any
+   errors or breakages that your developers have missed.
 
 ## Usage
 
@@ -92,7 +96,7 @@ $nudge-deprecated-selectors: (
 
 ## The Rules
 
-* **Imcorrect Nesting:** Check that a selector hasn’t been used outside of its
+* **Incorrect Nesting:** Check that a selector hasn’t been used outside of its
   required context. Display an error if it has.
 * **No IDs** We shouldn’t use IDs in CSS, so display a warning any time we find
   one.
