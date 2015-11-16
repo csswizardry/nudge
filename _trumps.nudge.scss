@@ -118,16 +118,19 @@
 
 $_nudge-alphabet: ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
 
-@each $letter in $_nudge-alphabet {
-  [class*="#{$letter}"] {
-    @include _nudge-message('warn');
+%_nudge-camel-case-shared-styles {
+  @include _nudge-message('warn');
 
-    &:after {
-      content: "WARN: Do not use camelCase in class names.";
-    }
-
+  &:after {
+    content: "WARN: Do not use camelCase in class names.";
   }
 
+}
+
+@each $letter in $_nudge-alphabet {
+  [class*="#{$letter}"] {
+    @extend %_nudge-camel-case-shared-styles;
+  }
 }
 
 } //endif
