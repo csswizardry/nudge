@@ -109,5 +109,5 @@ $nudge-deprecated-selectors: (
   a warning if we find any classes with single hyphens.
 * **Use of Camel Case:** We do not use camel case, so display a warning if we
   find any capital letters in a class.
-* **Depracated Selectors:** Display a warning if we find any classes that we
+* **Deprecated Selectors:** Display a warning if we find any classes that we
   have deemed deprecated.
