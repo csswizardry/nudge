@@ -1,5 +1,12 @@
 @import "../tools.nudge";
 
+html {
+  font: menu;
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 18px;
+}
+
 .foo__bar {
   @include nudge-nest('.foo');
 }
