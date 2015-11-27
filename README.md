@@ -10,11 +10,11 @@ incorrect usage get highlighted in the UI.
 
 ## Installation
 
-    $ bower install --save nudgecss
+    $ bower install --save-dev nudgecss
 
 Or:
 
-    $ npm install --save nudgecss
+    $ npm install --save-dev nudgecss
 
 ## Disclaimers and Notices
 
