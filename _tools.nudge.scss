@@ -2,11 +2,18 @@
 //  #NUDGE
 //\*----------------------------------*/
 
-$nudge-enabled: true !default;
+// Enable or disable Nudge’s features individually.
+$nudge-incorrect-nesting:     true !default;
+$nudge-no-ids:                true !default;
+$nudge-single-spaces:         true !default;
+$nudge-modifiers:             true !default;
+$nudge-underscores:           true !default;
+$nudge-camel-case:            true !default;
+$nudge-deprecated-selectors:  true !default;
 
-@if ($nudge-enabled == false) {
-  @warn "Nudge included but not enabled: UI errors no longer being reported."
-}
+
+
+
 
 // This is a private mixin for use only by the Nudge library. It simply spits
 // out the styles for the message that gets displayed in the UI.
@@ -67,7 +74,7 @@ $nudge-enabled: true !default;
 
 @mixin nudge-nest($element) {
 
-  @if ($nudge-enabled == true) {
+  @if ($nudge-incorrect-nesting == true) {
 
     /**
      * Immediately apply error states to all instances of the element…
