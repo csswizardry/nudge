@@ -40,50 +40,6 @@ html {
   #NUDGE
 \*------------------------------------*/
 /**
- * Use of IDs.
- *
- * IDs in CSS are a BadIdea™, so display a warning if one is detected. Mark as a
- * warn and not an error because IDs are still allowed in HTML and JS.
- */
-[id] {
-  position: relative;
-  outline: 1px solid orange; }
-  [id]:after {
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    font: normal 12px/1 monospace;
-    white-space: nowrap;
-    padding: 2px;
-    background-color: white;
-    color: orange; }
-  [id]:after {
-    content: "WARN: Do not use IDs in CSS."; }
-
-/**
- * Single-Space Delimited Class Attributes
- */
-[class*=" "] {
-  position: relative;
-  outline: 1px solid orange; }
-  [class*=" "]:after {
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    font: normal 12px/1 monospace;
-    white-space: nowrap;
-    padding: 2px;
-    background-color: white;
-    color: orange; }
-  [class*=" "]:after {
-    content: "WARN: Prefer double spaces between class names."; }
-
-[class*="  "] {
-  outline: none; }
-  [class*="  "]:after {
-    content: normal; }
-
-/**
  * Improper Use of BEM Modifiers.
  *
  * By checking whether a class attribute contains two hyphens but no  space
@@ -157,28 +113,5 @@ html {
     color: orange; }
   [class*="A"]:after, [class*="B"]:after, [class*="C"]:after, [class*="D"]:after, [class*="E"]:after, [class*="F"]:after, [class*="G"]:after, [class*="H"]:after, [class*="I"]:after, [class*="J"]:after, [class*="K"]:after, [class*="L"]:after, [class*="M"]:after, [class*="N"]:after, [class*="O"]:after, [class*="P"]:after, [class*="Q"]:after, [class*="R"]:after, [class*="S"]:after, [class*="T"]:after, [class*="U"]:after, [class*="V"]:after, [class*="W"]:after, [class*="X"]:after, [class*="Y"]:after, [class*="Z"]:after {
     content: "WARN: Do not use camelCase in class names."; }
-
-/**
- * Deprecated Selectors
- *
- * Sometimes we will want to deprecate and/or phase out certain selectors.
- * We can define a list of these selectors (with optional replacements)
- * that will display a warning in the UI when used.
- */
-.foo {
-  position: relative;
-  outline: 1px solid orange; }
-  .foo:after {
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    font: normal 12px/1 monospace;
-    white-space: nowrap;
-    padding: 2px;
-    background-color: white;
-    color: orange; }
-
-.foo:after {
-  content: "WARN: Selector `.foo` is deprecated."; }
 
 /*# sourceMappingURL=main.css.map */

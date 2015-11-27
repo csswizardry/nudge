@@ -48,16 +48,19 @@ documentation, please see the comments in the relevant files.
 
 ### Configuring
 
-You can disable Nudge by setting `$nudge-enabled` to `false` just before you
-`@import` `_tools.nudge.scss`, i.e.:
+You can disable Nudge features by setting `$nudge-[feature]` to `false` just
+before you `@import` `_tools.nudge.scss`, e.g.:
 
 ```scss
-$nudge-enabled: false;
+$nudge-single-spaces:         false;
+$nudge-underscores:           false;
+$nudge-camel-case:            false;
 @import "tools.nudge";
 ```
 
-Disabling Nudge will give warnings in your output stream: we don’t really want
-people turning Nudge off if we’ve purposely included it in a project.
+This will stop Nudge from reporting on the use of single spaces in class
+attributes, the use of underscores in class names, and the use of camel case
+in class names.
 
 #### Incorrect Nesting
 
