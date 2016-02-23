@@ -156,7 +156,7 @@ $_nudge-alphabet: ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','
 // it elsewhere earlier in the project (e.g. in a `_settings.deprecations.scss`
 // file).
 
-$nudge-deprecated-selectors: (
+$nudge-deprecated-selectors-list: (
   '.deprecated-class': '.replacement-class',
   '.deprecated-class-with-no-replaement': null,
 ) !default;
@@ -165,7 +165,7 @@ $nudge-deprecated-selectors: (
   @include _nudge-message('warn');
 }
 
-@each $selector, $replacement in $nudge-deprecated-selectors {
+@each $selector, $replacement in $nudge-deprecated-selectors-list {
   #{$selector} {
     @extend %_nudge-deprecated-selectors-shared-styles;
 

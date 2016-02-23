@@ -13,7 +13,7 @@ html {
   @include nudge-nest('.foo');
 }
 
-$nudge-deprecated-selectors: (
+$nudge-deprecated-selectors-list: (
   '.foo': null,
 );
 @import "../trumps.nudge";
