@@ -172,8 +172,10 @@ $nudge-deprecated-selectors-list: (
   &:after {
     @if ($replacement != null) {
       content: "WARN: Selector `#{$selector}` is deprecated, use `#{$replacement}` instead.";
+      @warn "Selector `#{$selector}` is deprecated, use `#{$replacement}` instead.";
     } @else {
       content: "WARN: Selector `#{$selector}` is deprecated.";
+      @warn "Selector `#{$selector}` is deprecated.";
     }
   }
 
