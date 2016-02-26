@@ -85,13 +85,13 @@ context of `.widget`.
 #### Deprecated Selectors
 
 To configure our deprecated selectors, simply copy/paste the
-`$nudge-deprecated-selectors` map out of `_trumps.nudge.scss` and into your
+`$nudge-deprecated-selectors-list` map out of `_trumps.nudge.scss` and into your
 manifest file (e.g. `main.scss`). Place it just before your `@import` for the
 `_trumps.nudge.scss` file, then delete the `!default` flag and replace the
 example selectors with your own, e.g.:
 
 ```scss
-$nudge-deprecated-selectors: (
+$nudge-deprecated-selectors-list: (
   '.btn': '.c-btn',
 );
 @import "trumps.nudge";
